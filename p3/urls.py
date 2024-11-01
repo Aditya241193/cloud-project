@@ -30,5 +30,5 @@ urlpatterns = [
     path('my-form/', views.my_form_view, name='my_form'),
     path('modal-form/', views.ModalFormView, name='modal_form'),
     path('homecontact/', views.contact_form_home_view, name='homecontact'),
-   
+
 ]
