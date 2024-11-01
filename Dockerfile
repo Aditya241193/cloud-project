@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Copy the requirements file and install dependencies
-RUN pip install django gunicorn
+RUN pip install django
 
 # Copy the application code to the container
 COPY . .
@@ -21,5 +21,5 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Run Gunicorn with the WSGI application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "p3.wsgi"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
